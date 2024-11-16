@@ -1,0 +1,30 @@
+@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #091d2c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #516a8d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #516a8d;
+}
+input[type="checkbox"]:checked {
+  accent-color: #ce5d00;
+  color: #fff;
+  cursor: pointer;  background-color: #fff;
+}
