@@ -6,6 +6,7 @@ import SingleCar from "./Pages/SingleCarPage";
 import Search from "./Pages/Search";
 import Sidebar from "./Components/Sidebar";
 import UseGetCarById from "./Components/Hooks/UseGetCarById";
+import NotFound from "./Pages/NotFound";
 
 export const SidebarNavigationsContent = createContext(null);
 
@@ -101,6 +102,7 @@ export default function App() {
                 </div>
               }
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </SidebarNavigationsContent.Provider>
       </>

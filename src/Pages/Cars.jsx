@@ -50,11 +50,9 @@ export default function Cars({ estado, searchQuery }) {
   ]);
 
   useEffect(() => {
-    if(!cars) return;
-    if(Array.isArray(cars)){
-
+    if (!cars) return;
+    if (Array.isArray(cars)) {
       if (cars.length > 0) {
-  
         setCars(cars);
       }
     }
@@ -62,7 +60,6 @@ export default function Cars({ estado, searchQuery }) {
 
   return (
     <>
-   
       <AllMainPageCarSectionTabs />
       {searchLoading || filterLoading ? (
         <div className="flex items-center justify-center w-full h-full">
@@ -89,9 +86,27 @@ export default function Cars({ estado, searchQuery }) {
               <SingleCarInSearchTypeTwo car={car} key={index} />
             ))
           ) : (
-            <div className="flex items-center justify-center w-full h-[50vh]">
-              <p className="text-lg text-[#ce5d00] font-semibold">
+            <div className="flex flex-col items-center justify-center w-full h-[50vh] ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-16 h-16 mb-4 text-orange-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12h6m2 2a9 9 0 11-18 0 9 9 0 0118 0zm-9-7a9 9 0 019 9m-9 0a9 9 0 01-9-9m0 9a9 9 0 019 9"
+                />
+              </svg>
+              <p className="text-xl font-semibold text-gray-700">
                 No Cars Found
+              </p>
+              <p className="mt-2 text-sm text-center text-gray-500">
+                Try adjusting your search criteria or check back later for new
+                cars.
               </p>
             </div>
           )}
