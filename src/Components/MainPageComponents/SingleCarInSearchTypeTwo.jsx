@@ -63,10 +63,10 @@ export default function SingleCarInSearchTypeTwo({ car }) {
         <div className="flex flex-col items-center justify-between w-1/2">
           <div className="flex items-center justify-center w-full">
             <div className="flex flex-col flex-1 mb-5 sm:hidden sm:mb-0">
-              <span className="lg:lg:text-sm text-[14px] text-[14px] font-semibold text-gray-500 text-left">
+              <span className="lg:lg:text-sm  text-[14px] font-semibold text-gray-500 text-left">
                 Marca
               </span>
-              <span className="lg:lg:text-lg text-[18px] text-[18px] font-medium text-gray-800 text-left">
+              <span className="lg:lg:text-lg  text-[18px] font-medium text-gray-800 text-left">
                 {carMarca}
               </span>
             </div>
@@ -252,7 +252,7 @@ export default function SingleCarInSearchTypeTwo({ car }) {
             <div className="flex flex-wrap items-start justify-start sm:hidden">
           {Emprestado && (
             <div className="flex items-center flex-1 mb-2 sm:mb-0">
-              <span className="mr-2 lg:lg:text-sm text-[14px] text-[14px] text-gray-600">
+              <span className="mr-2 lg:lg:text-sm text-[14px] text-gray-600">
                 Emprestado:
               </span>
               <input type="checkbox" readOnly checked={Emprestado || false} />
@@ -260,7 +260,7 @@ export default function SingleCarInSearchTypeTwo({ car }) {
           )}
           {Fechado && (
             <div className="flex items-center flex-1 mb-2 sm:mb-0">
-              <span className="mr-2 lg:lg:text-sm text-[14px] text-[14px] text-gray-600">
+              <span className="mr-2 lg:lg:text-sm text-[14px] text-gray-600">
                 Fechado:
               </span>
               <input type="checkbox" readOnly checked={Fechado || false} />
@@ -268,7 +268,7 @@ export default function SingleCarInSearchTypeTwo({ car }) {
           )}
           {Consignado && (
             <div className="flex items-center flex-1 mb-2 sm:mb-0">
-              <span className="mr-2 lg:lg:text-sm text-[14px] text-[14px] text-gray-600">
+              <span className="mr-2 lg:lg:text-sm text-[14px] text-gray-600">
                 Consignado:
               </span>
               <input type="checkbox" readOnly checked={Consignado || false} />
@@ -276,7 +276,7 @@ export default function SingleCarInSearchTypeTwo({ car }) {
           )}
           {Seguro && (
             <div className="flex items-center flex-1 mb-2 sm:mb-0">
-              <span className="mr-2 lg:lg:text-sm text-[14px] text-[14px] text-gray-600">
+              <span className="mr-2 lg:lg:text-sm text-[14px] text-gray-600">
                 Seguro:
               </span>
               <input type="checkbox" readOnly checked={Seguro || false} />
