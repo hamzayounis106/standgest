@@ -3,6 +3,7 @@ import Cars from "./Cars";
 import { createContext, useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import SearchBar from "../Components/MainPageComponents/SearchBar";
 export const HandleNavigateToCar = createContext();
 export const NavigateContext = createContext();
 export default function Search({ search }) {
@@ -15,7 +16,7 @@ export default function Search({ search }) {
       !search[2] &&
       location.search.includes("main=Gest%C3%A3o&sub=Viaturas")
     ) {
-      console.log("Navigating to default search", search);
+    
       navigate(`/search?main=Gestão&sub=Viaturas&estado=1&closed=0`);
       return;
     }
@@ -29,10 +30,7 @@ export default function Search({ search }) {
     );
     return;
   };
-  const handleNavigateToCar = (carId) => {
-    console.log('Navigating to:', `/search?main=${search[0]}&sub=${search[1]}&carId=${carId}`);
-    navigate(`/search?main=${search[0]}&sub=${search[1]}&carId=${carId}`);
-  };
+
   
   return (
     <>
@@ -40,11 +38,13 @@ export default function Search({ search }) {
         {search[0] === "Gestão" && search[1] === "Viaturas" ? (
           <HandleNavigateToCar.Provider value={search}>
             <NavigateContext.Provider value={navigateToTab}>
+            <SearchBar />
               <Cars estado={search[2]} searchQuery={search[3]} />
             </NavigateContext.Provider>
           </HandleNavigateToCar.Provider>
         ) : (
           <>
+            <SearchBar />
             <div className="flex flex-col items-center justify-center w-full h-full">
               <p className="text-[#ce5d00]  font-semibold text-xl">
                 <span>${search[0]}</span> {">"} {search[1]}

@@ -12,7 +12,7 @@ export default function UseGetCarById(id, options = {}) {
         const response = await axios.get(`/api/Car_by_id?car_id=${id}`, {
           withCredentials: true,
         });
-        // console.log(response.data);
+
         return response.data;
       } catch (error) {
         if (error.response.status === 401) {

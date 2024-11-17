@@ -1,26 +1,30 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 
-// In SearchBar component
+import { MdMenu } from "react-icons/md";
+import { SidebarNavigationsContent } from "../../App";
+
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const handleSidebarState = useContext(SidebarNavigationsContent);
+
   const handleSearch = () => {
     if (query === "") return;
 
     const searchParams = new URLSearchParams(location.search);
-
     searchParams.set("searchQuery", query);
-
     navigate(`${location.pathname}?${searchParams.toString()}`);
   };
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
+
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const querySearch = searchParams.get("searchQuery");
@@ -32,12 +36,18 @@ export default function SearchBar() {
   }, [location]);
 
   return (
-    <div className="flex w-full p-4 justify-start items-center bg-[#091d2c]">
-      <div className="relative w-[80%]">
+    <div className="flex w-full p-4 justify-between gap-4 lg:justify-start items-center bg-[#091d2c]">
+        <MdMenu
+          className=" cursor-pointer text-3xl text-[#cc5d00] lg:hidden"
+          onClick={handleSidebarState}
+        />
+      <div className="relative flex justify-between gap-10 items-center w-[90%] sm:w-[80%]">
+        {/* Icon on the left */}
+      
         <input
           type="text"
           className="w-full bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#cc5d00] focus:border-transparent py-1 px-2 pl-5"
-          placeholder="Pesquise por Marca de carro, como Audi, BMW, etc..."
+          placeholder="Modelo de pesquisa"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyPress}

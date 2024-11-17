@@ -32,7 +32,7 @@ export default function useLogin() {
     },
     {
       onSuccess: () => {
-        console.log("Login success");
+       
         window.location.href = "/search";
         // navigate("/search");
       },

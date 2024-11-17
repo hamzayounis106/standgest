@@ -64,11 +64,11 @@ export default function Login() {
           </div>
         ) : !car && !authLoading   && (
           <>
-            <div className="w-[50%] flex justify-center items-center flex-col gap-8">
+            <div className=" w-[70%] md:w-[50%] flex justify-center items-center flex-col gap-8">
               <div className="flex flex-col items-center justify-center gap-1 text-center text-white ">
                 <img
                   src="/logo.png"
-                  className="w-[370px]"
+                  className=" w-[320px] xl:w-[370px]"
                   alt="StandGest"
                 />
                 <p className="font-bold capitalize text-[1.2rem]">
@@ -78,7 +78,7 @@ export default function Login() {
               </div>
               <form
                 onSubmit={handleLoginSubmit}
-                className="flex flex-col items-start w-[45%] justify-center gap-6 text-white"
+                className="flex flex-col items-start w-[95%] sm:w-[45%] md:w-[32vw]  lg:w-[30vw] xl:w-[45%] justify-center gap-6 text-white"
               >
                 <div className="flex flex-col items-start justify-center w-full gap-2">
                   <label htmlFor="username" className="text-start">

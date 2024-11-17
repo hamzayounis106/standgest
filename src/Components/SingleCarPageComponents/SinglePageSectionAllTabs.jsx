@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import React, { useState } from "react";
 
 export default function SinglePageSectionAllTabs() {
-  const location = useLocation();
   const [tabActive, setTabActive] = useState(1);
   const tabs = [
     "dados viatura",
@@ -15,13 +13,14 @@ export default function SinglePageSectionAllTabs() {
   ];
 
   return (
-    <div className="flex items-center justify-start w-full gap-2 p-2 ">
+    <div className="flex flex-wrap items-center justify-start w-full gap-2 p-2 md:flex-nowrap md:gap-4">
       {tabs.map((tab, index) => (
         <button
           key={index}
+          onClick={() => setTabActive(index + 1)}
           className={`${
             tabActive === index + 1 ? "bg-[#ce5d00]" : "bg-[#091d2c]"
-          } text-white p-1 capitalize px-3 rounded-md`}
+          } text-white p-1 capitalize px-3 rounded-md text-sm md:text-base w-auto text-center`}
         >
           {tab}
         </button>

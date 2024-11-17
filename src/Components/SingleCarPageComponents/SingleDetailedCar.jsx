@@ -20,7 +20,7 @@ export default function SingleDetailedCar({ car }) {
             alt={`${car.Marca || ""} ${car.Modelo || ""}`}
             className="w-full rounded-lg "
           />
-          <div className="flex justify-c gap-10 mt-7">
+          <div className="flex justify-center gap-10 sm:gap-10 sm:justify-start mt-7">
             <button onClick={() => handleCarIconClick("NovoContrato")}>
               <img
                 src="/Icons_Car_menus/NovoContrato.png"

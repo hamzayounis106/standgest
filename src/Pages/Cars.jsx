@@ -62,7 +62,7 @@ export default function Cars({ estado, searchQuery }) {
 
   return (
     <>
-      <SearchBar />
+   
       <AllMainPageCarSectionTabs />
       {searchLoading || filterLoading ? (
         <div className="flex items-center justify-center w-full h-full">
