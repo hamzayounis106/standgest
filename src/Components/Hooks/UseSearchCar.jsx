@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import BASE_URL from "../../BaseURL";
 export default function UseSearchCar(query, options = {}) {
   return useQuery(
     ["querySearch", query],
     async () => {
       if (query === "") return;
       try {
-        const response = await axios.get(`/api/search_car?search_content=${query}`, {
+        const response = await axios.get(BASE_URL+`/search_car?search_content=${query}`, {
           withCredentials: true,
         });
       

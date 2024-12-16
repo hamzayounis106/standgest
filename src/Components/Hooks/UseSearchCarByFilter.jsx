@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import BASE_URL from "../../BaseURL";
 
 export default function UseSearchCarByFilter(estado, closed, options = {}) {
   return useQuery(
@@ -9,7 +10,7 @@ export default function UseSearchCarByFilter(estado, closed, options = {}) {
     
       try {
         const response = await axios.get(
-          `/api/fixed_car_filter?estado=${estado}&closed=${closed}`,
+          BASE_URL+ `/fixed_car_filter?estado=${estado}&closed=${closed}`,
           {
             withCredentials: true,
           }

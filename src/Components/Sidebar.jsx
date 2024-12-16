@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaSignOutAlt, FaTimes } from "react-icons/fa"; // Importing cross icon
 import axios from "axios";
 import { SidebarNavigationsContent } from "../App"; // Adjust the import path as needed
+import BASE_URL from "../BaseURL";
 
 export default function Sidebar({ activeSearch }) {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function Sidebar({ activeSearch }) {
 
   const handleLogout = async () => {
     try {
-      await axios.post("/api/logout", { withCredentials: true });
+      await axios.post(BASE_URL+"/logout", { withCredentials: true });
       window.location.href = "/";
     } catch (error) {
       console.error("Logging out:", error);

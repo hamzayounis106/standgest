@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import BASE_URL from "../../BaseURL";
 
 export default function UseGetCarById(id, options = {}) {
   if (!id) {
@@ -9,7 +10,7 @@ export default function UseGetCarById(id, options = {}) {
     ["car", id],
     async () => {
       try {
-        const response = await axios.get(`/api/Car_by_id?car_id=${id}`, {
+        const response = await axios.get(BASE_URL+`/Car_by_id?car_id=${id}`, {
           withCredentials: true,
         });
 
@@ -25,6 +26,7 @@ export default function UseGetCarById(id, options = {}) {
 
     {
       refetchOnWindowFocus: false,
+      retry: 0,
       ...options,
     }
   );

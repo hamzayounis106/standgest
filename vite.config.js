@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import env from "dotenv";
-env.config();
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const API_ENDPOINT = process.env.VITE_API_ENDPOINT;
 
 export default defineConfig({
@@ -9,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: API_ENDPOINT,
+        target: 'http://13.38.57.246/standgest-backend-api',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

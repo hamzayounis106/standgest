@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../BaseURL";
 
 export default function useLogin() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function useLogin() {
 
       try {
         const response = await axios.post(
-          "/api/login",
+          BASE_URL+"/login",
           {
             username,
             password,
@@ -33,8 +34,8 @@ export default function useLogin() {
     {
       onSuccess: () => {
        
-        window.location.href = "/search";
-        // navigate("/search");
+        // window.location.href = "/search";
+        navigate("/search");
       },
     }
   );
